@@ -1,6 +1,6 @@
 # route-screen-react-native
 
-An simple example of how to handle multiple navigation in the same app
+A simple example of how to handle multiple navigation in the same app
 
 This example use [react-navigation](https://reactnavigation.org/docs/getting-started) with:
 
