@@ -1,17 +1,17 @@
 import React, {useState} from 'react';
 
 export const AuthContext = React.createContext({
-  authState: true,
+  isLoggedOut: true,
   toggleLogged: () => {},
 });
 
 export const AtuhProvider = props => {
-  const [authState, setToggleLogged] = useState(true);
+  const [isLoggedOut, setIsLoggedOut] = useState(true);
 
-  const toggleLogged = () => setToggleLogged(!authState);
+  const toggleLogged = () => setIsLoggedOut(!isLoggedOut);
 
   return (
-    <AuthContext.Provider value={{authState, toggleLogged}}>
+    <AuthContext.Provider value={{isLoggedOut, toggleLogged}}>
       {props.children}
     </AuthContext.Provider>
   );

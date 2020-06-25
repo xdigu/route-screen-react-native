@@ -8,8 +8,8 @@ import Tab2 from '../pages/Tab2';
 import {Colors} from '../constants/colors';
 import OpenMenu from '../components/OpenMenu';
 
-const TabStack = createStackNavigator();
 const TabBottom = createBottomTabNavigator();
+const TabStack = createStackNavigator();
 
 const TabNavigator = () => (
   <TabBottom.Navigator>

@@ -3,7 +3,7 @@ import React from 'react';
 
 import {AtuhProvider} from './src/services';
 
-import {Routes} from './src/routes';
+import Routes from './src/routes';
 
 const App = () => {
   return (
