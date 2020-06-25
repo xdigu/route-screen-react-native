@@ -1,6 +1,8 @@
 import React, {useContext} from 'react';
 import {StatusBar} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import {createStackNavigator} from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
 
 import {AuthContext} from '../services';
 import CustomDrawer from '../pages/CustomDrawer';
@@ -8,7 +10,6 @@ import Login from './login.routes';
 import Nesting from './nesting.routes';
 import Home from './home.routes';
 import Tab from './tab.routes';
-import {createStackNavigator} from '@react-navigation/stack';
 
 const Drawer = createDrawerNavigator();
 
@@ -44,18 +45,20 @@ export const Routes = () => {
   const {authState} = useContext(AuthContext);
 
   return (
-    <NewStack.Navigator screenOptions={{headerShown: false}}>
-      {authState ? (
-        <NewStack.Screen
-          name="Login"
-          component={AppLogin}
-          options={{
-            animationTypeForReplace: authState ? 'pop' : 'push',
-          }}
-        />
-      ) : (
-        <NewStack.Screen name="Home" component={App} />
-      )}
-    </NewStack.Navigator>
+    <NavigationContainer>
+      <NewStack.Navigator screenOptions={{headerShown: false}}>
+        {authState ? (
+          <NewStack.Screen
+            name="Login"
+            component={AppLogin}
+            options={{
+              animationTypeForReplace: authState ? 'pop' : 'push',
+            }}
+          />
+        ) : (
+          <NewStack.Screen name="Home" component={App} />
+        )}
+      </NewStack.Navigator>
+    </NavigationContainer>
   );
 };
