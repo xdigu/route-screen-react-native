@@ -3,25 +3,28 @@ import {StatusBar} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 
-import {AuthContext} from '../services';
+import {AuthContext} from '../services/Auth';
 import Drawer from './drawer.routes';
 import Login from './login.routes';
+import Splash from '../pages/Splash';
 
 const Stack = createStackNavigator();
 
 const Routes = () => {
-  const {isLoggedOut} = useContext(AuthContext);
+  const {isLoading, isSignout} = useContext(AuthContext);
 
   return (
     <NavigationContainer>
       <StatusBar barStyle="light-content" />
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        {isLoggedOut ? (
+        {isLoading ? (
+          <Stack.Screen name="Splash" component={Splash} />
+        ) : isSignout ? (
           <Stack.Screen
             name="Login"
             component={Login}
             options={{
-              animationTypeForReplace: isLoggedOut ? 'pop' : 'push',
+              animationTypeForReplace: isSignout ? 'pop' : 'push',
             }}
           />
         ) : (

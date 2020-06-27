@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 
-import {AtuhProvider} from './src/services';
+import AtuhProvider from './src/services/Auth';
 
 import Routes from './src/routes';
 

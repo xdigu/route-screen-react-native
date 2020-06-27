@@ -4,7 +4,7 @@ import {View, SafeAreaView, Text, Button} from 'react-native';
 import {Colors} from '../../constants/colors';
 import style from './style';
 
-const CustomDrawer = ({state, navigation, toggleLogin}) => {
+const CustomDrawer = ({state, navigation, signOut}) => {
   const {routes, index: draweIndex} = state;
 
   return (
@@ -24,7 +24,7 @@ const CustomDrawer = ({state, navigation, toggleLogin}) => {
             <Button title={name} onPress={() => navigation.navigate(name)} />
           </View>
         ))}
-        <Button title="Logout" onPress={toggleLogin} color={Colors.red} />
+        <Button title="Logout" onPress={signOut} color={Colors.red} />
       </View>
     </SafeAreaView>
   );
