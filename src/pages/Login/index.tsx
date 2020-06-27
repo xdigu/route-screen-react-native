@@ -2,14 +2,14 @@ import React from 'react';
 import {View, Button, Text} from 'react-native';
 
 import {AuthContext} from '../../services';
-import style from './style';
+import Styles from '../../styles';
 
 const Login = () => {
   const {toggleLogged} = React.useContext(AuthContext);
 
   return (
-    <View style={style.container}>
-      <Text style={style.screenName}>Login</Text>
+    <View style={Styles.container}>
+      <Text style={Styles.textTitle}>Login</Text>
       <Button title="Login" onPress={toggleLogged} />
     </View>
   );

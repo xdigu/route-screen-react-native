@@ -9,5 +9,6 @@ export default StyleSheet.create({
   menuText: {
     color: Colors.white,
     marginLeft: 10,
+    fontSize: 20,
   },
 });
